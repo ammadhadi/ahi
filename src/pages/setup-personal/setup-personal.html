@@ -1,0 +1,93 @@
+
+<ion-content padding>
+
+  <form [formGroup]="personalForm">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1 ion-text color="secondary" class="spacer-top">{{ 'SETUP_PERSONAL' | translate }}</h1>
+          <p class="lead">{{ 'SETUP_PERSONAL_INTRO' | translate }}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h4 *ngIf="submitAttempt" ion-text color="danger">{{ 'FORM_ERROR' | translate }}</h4>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          {{ 'REQUIRED' | translate }}
+          <ion-item>
+            <ion-label floating>{{ 'FIRST_NAME' | translate }}*</ion-label>
+            <ion-input formControlName="firstName" type="text" [class.invalid]="!personalForm.controls.firstName.valid && (personalForm.controls.firstName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'LAST_NAME' | translate }}*</ion-label>
+            <ion-input formControlName="lastName" type="text" [class.invalid]="!personalForm.controls.lastName.valid && (personalForm.controls.lastName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'SEX' | translate }}*</ion-label>
+            <ion-select formControlName="sex" [class.invalid]="!personalForm.controls.sex.valid && (personalForm.controls.sex.dirty || submitAttempt)">
+              <ion-option value="Male">{{ 'SEX_M' | translate }}</ion-option>
+              <ion-option value="Female">{{ 'SEX_F' | translate }}</ion-option>
+              <ion-option value="Pregnant Female">{{ 'SEX_P' | translate }}</ion-option>
+              <ion-option value="Prefer not to disclose">{{ 'SEX_N' | translate }}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'AGE' | translate }}*</ion-label>
+            <ion-input formControlName="age" type="number" [class.invalid]="!personalForm.controls.age.valid && (personalForm.controls.age.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'HEIGHT' | translate }}</ion-label>
+            <ion-input formControlName="height" type="number" [class.invalid]="!personalForm.controls.height.valid && (personalForm.controls.height.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'WEIGHT' | translate }}</ion-label>
+            <ion-input formControlName="weight" type="number" [class.invalid]="!personalForm.controls.weight.valid && (personalForm.controls.weight.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'ALLERGIES' | translate }}</ion-label>
+            <ion-textarea formControlName="allergies" type="text" [class.invalid]="!personalForm.controls.allergies.valid && (personalForm.controls.allergies.dirty || submitAttempt)"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8 offset-2>
+          <button block color="primary" ion-button class="spacer-top" (click)="saveData()">
+              {{ 'BTN_SAVE_CONTINUE' | translate }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+  <p>
+    <button ion-button color="light" small (click)="cancel()">{{ 'CANCEL' | translate }}</button>
+  </p>
+
+</ion-content>

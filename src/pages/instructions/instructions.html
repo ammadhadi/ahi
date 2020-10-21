@@ -1,0 +1,33 @@
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10 offset-1>
+        <h1 ion-text color="secondary">{{ 'INSTRUCTIONS' | translate }}</h1>
+        <p class="lead">{{ 'INSTRUCTIONS_A' | translate }} <a (click)="openExternal(this.dataService.config['website_url'])">{{ this.dataService.config['website_display'] }}</a></p>
+        <p>{{ 'WHATSAPP_NOTE' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10 offset-1>
+        <button block color="primary" ion-button class="spacer" (click)="home()">
+          {{ 'BTN_GOT_IT' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+     <ion-row>
+      <ion-col col-10 offset-1>
+        <hr>
+        <h4 ion-text color="secondary">{{ 'LEARN_MORE' | translate }}</h4>
+        <p>
+          {{ 'LEARN_MORE_DETAIL' | translate }}<br>
+          <button color="secondary" ion-button class="spacer" (click)="openExternal(this.dataService.appData['subscription_url'])">
+            {{ 'BTN_LEARN_MORE' | translate }}
+          </button>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

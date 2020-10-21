@@ -1,0 +1,69 @@
+
+<ion-content padding>
+
+  <form [formGroup]="optionalForm">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1 ion-text color="secondary" class="spacer-top">{{ 'SETUP_OPTIONAL' | translate }}</h1>
+          <p class="lead">{{ 'SETUP_OPTIONAL_INTRO' | translate }}</p>
+          <button ion-button small color="secondary" (click)="saveData()">{{ 'SKIP' | translate }}</button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h4 *ngIf="submitAttempt" ion-text color="danger">{{ 'FORM_ERROR' | translate }}</h4>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'EXISTING_CONDITIONS' | translate }}</ion-label>
+            <ion-textarea formControlName="existingConditions" type="text" [class.invalid]="!optionalForm.controls.existingConditions.valid && (optionalForm.controls.existingConditions.dirty || submitAttempt)"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'CONTACTS_LOCAL' | translate }}</ion-label>
+            <ion-textarea formControlName="contactsLocal" type="text" [class.invalid]="!optionalForm.controls.contactsLocal.valid && (optionalForm.controls.contactsLocal.dirty || submitAttempt)"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'CONTACTS_INTERNATIONL' | translate }}</ion-label>
+            <ion-textarea formControlName="contactsInternational" type="text" [class.invalid]="!optionalForm.controls.contactsInternational.valid && (optionalForm.controls.contactsInternational.dirty || submitAttempt)"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'INSURANCE_INFORMATION' | translate }}</ion-label>
+            <ion-textarea formControlName="insuranceInformation" type="text" [class.invalid]="!optionalForm.controls.insuranceInformation.valid && (optionalForm.controls.insuranceInformation.dirty || submitAttempt)"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8 offset-2>
+          <button block color="primary" ion-button class="spacer-top" (click)="saveData()">
+              {{ 'BTN_SAVE_CONTINUE' | translate }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+  <p>
+    <button ion-button color="light" small (click)="cancel()">{{ 'CANCEL' | translate }}</button>
+  </p>
+
+</ion-content>
+

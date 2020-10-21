@@ -1,0 +1,86 @@
+
+<ion-content padding>
+
+  <img src="assets/img/Newheader.png">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <p class="lead">{{ 'WELCOME_INTRO_A' | translate }}</p>
+        <p class="bold">{{ 'WELCOME_INTRO_B' | translate }}</p>
+        <p>{{ 'WHATSAPP_NOTE' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10 offset-1>
+        <h5>{{ 'SELECT_LANGUAGE' | translate }}</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5 offset-1>
+        <button ion-button small [color]="englishBtn" block (click)="translateTo('en')">
+          {{ 'BTN_ENGLISH' | translate }}
+        </button>
+      </ion-col>
+      <ion-col col-5 >
+        <button ion-button small [color]="frenchBtn" block (click)="translateTo('fr')">
+          {{ 'BTN_FRENCH' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10 offset-1>
+        <button block color="primary" ion-button class="large spacer" (click)="getStarted()">
+          {{ 'BTN_GET_STARTED' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-10 offset-1>
+        <hr>
+        <h4 ion-text color="secondary">{{ 'LEARN_MORE' | translate }}</h4>
+        <p>
+          {{ 'LEARN_MORE_DETAIL' | translate }}<br>
+          <button color="secondary" ion-button class="spacer" (click)="openExternal(this.dataService.appData['subscription_url'])">
+            {{ 'BTN_LEARN_MORE' | translate }}
+          </button>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="spacer-bottom-lg">
+      <ion-col col-12>
+        <!--<h4 ion-text color="secondary">{{ 'NEED_HELP' | translate }}</h4>-->
+        <h4 ion-text class="contact-header">{{ 'CONTACT_HEADER' | translate }}</h4>
+        <ul class="contact-list">
+          <li>
+              <i class="fa fa-lg fa-phone" aria-hidden="true"></i> {{ 'CONTACT_PHONE' | translate }}:
+              <strong><a href="tel:{{ this.dataService.appData['phone'] }}">{{ this.dataService.appData['phone'] }}</a></strong>
+          </li>
+          <li>
+              <i class="fa fa-lg fa-phone" aria-hidden="true"></i> {{ 'CONTACT_SATELLITE' | translate }}:
+              <strong><a href="tel:{{ this.dataService.appData['satellite'] }}">{{ this.dataService.appData['satellite'] }}</a></strong>
+          </li>
+          <li>
+              <i class="fa fa-lg fa-whatsapp" aria-hidden="true"></i> {{ 'CONTACT_WHATSAPP' | translate }}:
+              <strong><a href="tel:{{ this.dataService.appData['whatsapp'] }}">{{ this.dataService.appData['whatsapp'] }}</a></strong>
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12 class="footer">
+        <hr>
+        <small>
+          © {{ year }} {{ 'FOOTER' | translate }} – <a (click)="openExternal(this.dataService.appData['terms_url'])">{{ 'TERMS' | translate }}</a> | <a (click)="openExternal(this.dataService.appData['privacy_url'])">{{ 'PRIVACY' | translate }}</a><br>
+          {{ version }}
+        </small>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+

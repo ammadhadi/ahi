@@ -1,0 +1,54 @@
+<ion-content padding>
+
+  <button ion-button small color="light" class="menu_button" (click)="openMenu()"><i class="fa fa-lg fa-bars" aria-hidden="true"></i></button>
+
+  <img src="assets/img/Newheader.png">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <button color="primary" ion-button class="large spacer-lg" (click)="openWhatsApp()">
+          {{ 'BTN_REQUEST_HELP' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="spacer-bottom-lg">
+      <ion-col col-10 offset-1>
+        <h3 ion-text color="secondary">{{ 'CURRENT_LOCATION' | translate }}</h3>
+        {{ 'LATITUDE' | translate }}: <strong>{{ latitude }}</strong><br>
+        {{ 'LONGITUDE' | translate }}: <strong>{{ longitude }}</strong>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="spacer-bottom-lg">
+      <ion-col col-12>
+        <h4 ion-text class="contact-header">{{ 'CONTACT_HEADER' | translate }}</h4>
+        <ul class="contact-list">
+          <li>
+              <i class="fa fa-lg fa-phone" aria-hidden="true"></i> {{ 'CONTACT_PHONE' | translate }}:
+              <strong><a href="tel:{{ this.dataService.appData['phone'] }}">{{ this.dataService.appData['phone'] }}</a></strong>
+          </li>
+          <li>
+              <i class="fa fa-lg fa-phone" aria-hidden="true"></i> {{ 'CONTACT_SATELLITE' | translate }}:
+              <strong><a href="tel:{{ this.dataService.appData['satellite'] }}">{{ this.dataService.appData['satellite'] }}</a></strong>
+          </li>
+          <li>
+              <i class="fa fa-lg fa-whatsapp" aria-hidden="true"></i> {{ 'CONTACT_WHATSAPP' | translate }}:
+              <strong><a href="tel:{{ this.dataService.appData['whatsapp'] }}">{{ this.dataService.appData['whatsapp'] }}</a></strong>
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12 class="footer">
+        <small>
+          © {{ year }} {{ 'FOOTER' | translate }} – <a (click)="openExternal(this.dataService.appData['terms_url'])">{{ 'TERMS' | translate }}</a> | <a (click)="openExternal(this.dataService.appData['privacy_url'])">{{ 'PRIVACY' | translate }}</a><br>
+          {{ version }}
+        </small>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

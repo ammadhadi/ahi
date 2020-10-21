@@ -1,0 +1,186 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-content {
+
+  .scroll-content {
+    background-image: url('../assets/img/background.jpg');
+    background-size: 100% auto;
+    //background-repeat: no-repeat;
+    //background-attachment: local;
+  }
+
+  text-align: center;
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h5 {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  .large {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 1.8em;
+    max-width: 100%;
+  }
+
+  .spacer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .spacer-lg {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .spacer-top {
+    margin-top: 20px;
+  }
+
+  .spacer-bottom {
+    margin-bottom: 20px;
+  }
+
+  .spacer-bottom-lg {
+    margin-bottom: 40px;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  p.lead {
+    font-size: 1.5em;
+  }
+
+ .item-md {
+    padding-left: 0;
+  }
+
+  .item-md.item-block .item-inner {
+    padding-right: 0;
+    border-bottom: 0;
+  }
+
+  .error {
+    font-size: 0.8em;
+    color: $error;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+
+  .swiper-slide {
+    display: block;
+  }
+
+  .input-has-value .label-md[floating],
+  .input-has-value .label-ios[floating] {
+    font-weight: 600;
+    color: $label;
+  }
+
+  .label.label-md,
+  .label.label-ios {
+    padding-left: 5px;
+    color: $label-off;
+  }
+
+  ion-label {
+    font-size: .8em;
+  }
+
+  ion-input, ion-select, ion-textarea {
+    background-color: #f2f2f2;
+    padding: 5px 10px 0;
+    border-radius: 4px;
+    border: 0;
+    min-height: 45px;
+    color: #000000;
+    border-bottom: 0;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-justify {
+    text-align: justify;
+  }
+
+  .item-inner {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .select-text {
+    padding: 5px 10px 2px;
+  }
+
+  .invalid {
+    border: 2px solid $error;
+  }
+
+  .footer {
+    color: #c7b299;
+  }
+
+  .menu_button {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 2;
+    height: 30px;
+    width: 50px;
+    color: #c7b299;
+  }
+
+  .contact-header {
+    font-size: 1.2em;
+  }
+
+  .contact-list {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    display: inline-block;
+    list-style-type: none;
+    li {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      .fa {
+        margin-right: 5px;
+        color: #ffc20e;
+      }
+    }
+  }
+}
+

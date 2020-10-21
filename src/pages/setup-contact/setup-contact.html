@@ -1,0 +1,79 @@
+
+<ion-content padding>
+
+  <form [formGroup]="contactForm">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1 ion-text color="secondary" class="spacer-top">{{ 'SETUP_CONTACT' | translate }}</h1>
+          <p class="lead">{{ 'SETUP_CONTACT_INTRO' | translate }}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h4 *ngIf="submitAttempt" ion-text color="danger">{{ 'FORM_ERROR' | translate }}</h4>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          {{ 'REQUIRED' | translate }}
+          <ion-item>
+            <ion-label floating>{{ 'AHI_SUBSCRIBER' | translate }}*</ion-label>
+            <ion-select formControlName="subscriber" [class.invalid]="!contactForm.controls.subscriber.valid && (contactForm.controls.subscriber.dirty || submitAttempt)">
+              <ion-option value="Yes" >{{ 'YES' | translate }}</ion-option>
+              <ion-option value="No">{{ 'NO' | translate }}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'EMAIL' | translate }}*</ion-label>
+            <ion-input formControlName="email" type="email" [class.invalid]="!contactForm.controls.email.valid && (contactForm.controls.email.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'PHONE_PRIMARY' | translate }}</ion-label>
+            <ion-input formControlName="phonePrimary" type="text" [class.invalid]="!contactForm.controls.phonePrimary.valid && (contactForm.controls.phonePrimary.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'PHONE_SECONDARY' | translate }}</ion-label>
+            <ion-input formControlName="phoneSecondary" type="text" [class.invalid]="!contactForm.controls.phoneSecondary.valid && (contactForm.controls.phoneSecondary.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>{{ 'PHONE_SATELLITE' | translate }}</ion-label>
+            <ion-input formControlName="phoneSatellite" type="text" [class.invalid]="!contactForm.controls.phoneSatellite.valid && (contactForm.controls.phoneSatellite.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8 offset-2>
+          <button block color="primary" ion-button class="spacer-top" (click)="saveData()">
+              {{ 'BTN_SAVE_CONTINUE' | translate }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+  <p>
+    <button ion-button color="light" small (click)="cancel()">{{ 'CANCEL' | translate }}</button>
+  </p>
+
+</ion-content>
